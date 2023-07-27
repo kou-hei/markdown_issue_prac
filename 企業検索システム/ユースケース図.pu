@@ -1,0 +1,29 @@
+@startuml ユースケース図
+left to right direction
+
+actor 管理者#000000;line:Black;line.bold;
+actor 利用者#000000;line:Black;line.bold;
+rectangle 登録システム{
+    usecase 管理者ログイン
+    usecase 企業情報登録
+    usecase 企業情報保守
+    usecase 情報編集
+    usecase 情報削除
+    usecase 利用者ログイン
+    usecase 企業情報検索
+    usecase 全データ表示
+    usecase 県より検索
+    usecase 業種より検索
+}
+管理者-->管理者ログイン
+管理者-->企業情報登録
+管理者-->企業情報保守
+情報編集 -up-> 企業情報保守
+情報削除 -up-> 企業情報保守
+利用者ログイン<--利用者
+企業情報検索 <--利用者
+全データ表示 --> 企業情報検索
+県より検索 --> 企業情報検索
+業種より検索 --> 企業情報検索
+
+@enduml
